@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 import Header from "./components/Header";
+import ProjectsView from "./components/ProjectsView";
 import {
   Dialog,
   DialogContent,
@@ -15,8 +16,10 @@ function App() {
   const [tab, setTab] = useState("projects");
 
   return (
-    <>
+    <div className="min-h-screen bg-[radial-gradient(ellipse_80%_50%_at_center,theme(colors.primary.100)_0%,theme(colors.primary.50)_40%,white_100%)]">
       <Header tab={tab} onTabChange={setTab} />
+
+      <ProjectsView />
 
       <Dialog
         open={tab === "contact"}
@@ -40,7 +43,7 @@ function App() {
           </DialogHeader>
         </DialogContent>
       </Dialog>
-    </>
+    </div>
   );
 }
 
