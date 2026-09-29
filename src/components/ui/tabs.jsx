@@ -18,12 +18,13 @@ function Tabs({ className, orientation = "horizontal", ...props }) {
 }
 
 const tabsListVariants = cva(
-  "group/tabs-list inline-flex w-fit items-center justify-center rounded-full p-1 bg-white ring-1 ring-primary-100 group-data-horizontal/tabs:h-auto group-data-vertical/tabs:h-fit group-data-vertical/tabs:flex-col group-data-vertical/tabs:rounded-2xl data-[variant=line]:rounded-none",
+  "group/tabs-list inline-flex w-fit items-center justify-center rounded-full p-1 group-data-horizontal/tabs:h-auto group-data-vertical/tabs:h-fit group-data-vertical/tabs:flex-col group-data-vertical/tabs:rounded-2xl",
   {
     variants: {
       variant: {
-        default: "",
-        line: "gap-1 bg-transparent",
+        default: "bg-white ring-1 ring-primary-100",
+        soft: "bg-slate-100 rounded-2xl p-1.5",
+        line: "gap-1 bg-transparent rounded-none",
       },
     },
     defaultVariants: {
@@ -48,8 +49,10 @@ function TabsTrigger({ className, ...props }) {
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        "relative inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium whitespace-nowrap text-slate-600 transition-all",
-        "data-[state=active]:bg-primary-500 data-[state=active]:text-white data-[state=active]:shadow-sm",
+        "relative inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold whitespace-nowrap text-slate-500 transition-all",
+        "group-data-[variant=soft]/tabs-list:rounded-xl",
+        "group-data-[variant=default]/tabs-list:data-[state=active]:bg-primary-500 group-data-[variant=default]/tabs-list:data-[state=active]:text-white group-data-[variant=default]/tabs-list:data-[state=active]:shadow-sm",
+        "group-data-[variant=soft]/tabs-list:data-[state=active]:bg-white group-data-[variant=soft]/tabs-list:data-[state=active]:text-primary-700 group-data-[variant=soft]/tabs-list:data-[state=active]:shadow-sm",
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className,
       )}

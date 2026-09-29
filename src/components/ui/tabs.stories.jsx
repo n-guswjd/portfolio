@@ -14,7 +14,7 @@ export const Default = {
     return (
       <>
         <Tabs value={tab} onValueChange={setTab}>
-          <TabsList>
+          <TabsList variant="default">
             <TabsTrigger value="projects">Projects</TabsTrigger>
             <TabsTrigger value="contact">Contact</TabsTrigger>
           </TabsList>
@@ -44,9 +44,9 @@ export const ShowcaseStyle = {
   render: () => (
     <Tabs defaultValue="preview" className="flex flex-col gap-2">
       <div className="rounded-2xl border bg-white shadow-sm p-6 min-h-[300px]">
-        <TabsList>
-          <TabsTrigger value="preview">화면 미리보기</TabsTrigger>
-          <TabsTrigger value="components">UI 컴포넌트 쇼케이스</TabsTrigger>
+        <TabsList variant="soft">
+          <TabsTrigger value="preview">🖥️ 화면 미리보기</TabsTrigger>
+          <TabsTrigger value="components">🎨 UI 컴포넌트 쇼케이스</TabsTrigger>
         </TabsList>
 
         <TabsContent value="preview" className="mt-4">
