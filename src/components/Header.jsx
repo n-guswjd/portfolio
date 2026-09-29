@@ -2,6 +2,8 @@ import icon from "../assets/icon.png";
 import githubLogo from "../assets/github-logo.png";
 import profile from "../assets/profile.png";
 
+import { FileText, Mail } from "lucide-react";
+
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
 
 function Header({ tab, onTabChange }) {
@@ -21,8 +23,14 @@ function Header({ tab, onTabChange }) {
       <section className="flex-1 flex justify-center">
         <Tabs value={tab} onValueChange={onTabChange}>
           <TabsList>
-            <TabsTrigger value="projects">📄 Projects</TabsTrigger>
-            <TabsTrigger value="contact">✉️ Contact</TabsTrigger>
+            <TabsTrigger value="projects">
+              <FileText size={16} />
+              Projects
+            </TabsTrigger>
+            <TabsTrigger value="contact">
+              <Mail size={16} />
+              Contact
+            </TabsTrigger>
           </TabsList>
         </Tabs>
       </section>
