@@ -1,9 +1,47 @@
+import { useState } from "react";
 import "./App.css";
 
 import Header from "./components/Header";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "./components/ui/dialog";
+
+import Proflie from "./assets/profile.png";
 
 function App() {
-  return <Header />;
+  const [tab, setTab] = useState("projects");
+
+  return (
+    <>
+      <Header tab={tab} onTabChange={setTab} />
+
+      <Dialog
+        open={tab === "contact"}
+        onOpenChange={(open) => {
+          if (!open) setTab("projects");
+        }}
+      >
+        <DialogContent>
+          <DialogHeader>
+            <div className="flex items-center gap-3">
+              <img
+                src={Proflie}
+                alt="Profile"
+                className="h-10 w-10 rounded-full  object-contain p-2"
+              />
+              <div className="flex flex-col">
+                <DialogTitle>남현정</DialogTitle>
+                <p className="text-sm text-subtext">Frontend Engineer</p>
+              </div>
+            </div>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+    </>
+  );
 }
 
 export default App;

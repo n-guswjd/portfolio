@@ -2,7 +2,9 @@ import icon from "../assets/icon.png";
 import githubLogo from "../assets/github-logo.png";
 import profile from "../assets/profile.png";
 
-function Header() {
+import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
+
+function Header({ tab, onTabChange }) {
   return (
     <header className="flex items-center px-6 py-4">
       <section className="flex items-center gap-2">
@@ -16,7 +18,14 @@ function Header() {
         </p>
       </section>
 
-      <section></section>
+      <section className="flex-1 flex justify-center">
+        <Tabs value={tab} onValueChange={onTabChange}>
+          <TabsList>
+            <TabsTrigger value="projects">📄 Projects</TabsTrigger>
+            <TabsTrigger value="contact">✉️ Contact</TabsTrigger>
+          </TabsList>
+        </Tabs>
+      </section>
 
       <section className="flex items-center gap-4 ml-auto">
         <a
