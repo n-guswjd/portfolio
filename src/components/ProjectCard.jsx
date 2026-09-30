@@ -1,23 +1,37 @@
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 
-function ProjectCard({ index, type, title, description, stack, detail }) {
+function ProjectCard({
+  index,
+  type,
+  title,
+  description,
+  stack,
+  detail,
+  className,
+}) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <div className="w-[420px] rounded-2xl border border-primary-100 bg-white p-6 shadow-sm">
-        <div className="flex items-center justify-between mb-4">
-          <span className="flex items-center gap-1.5 rounded-full bg-primary-50 px-3 py-1.5 text-sm font-medium text-primary-700">
+      <div
+        className={cn(
+          "w-[24vw] min-w-[240px] max-w-[420px] h-auto min-h-[220px] rounded-2xl border border-primary-100 bg-white p-5 shadow-sm",
+          className,
+        )}
+      >
+        <div className="flex items-center justify-between mb-3">
+          <span className="flex items-center gap-1 rounded-full bg-primary-50 px-2.5 py-1 text-sm font-medium text-primary-700">
             📄 {index}번째 프로젝트
           </span>
           <span className="text-sm text-subtext">{type}</span>
         </div>
 
-        <h3 className="text-xl font-semibold mb-1">{title}</h3>
-        <p className="text-sm text-subtext mb-4">{description}</p>
+        <h3 className="text-lg font-semibold mb-1">{title}</h3>
+        <p className="text-sm text-subtext mb-3">{description}</p>
 
-        <div className="flex flex-wrap gap-1.5 mb-4">
+        <div className="flex flex-wrap gap-1.5 mb-3">
           {stack.map((s) => (
             <span
               key={s}
@@ -28,16 +42,14 @@ function ProjectCard({ index, type, title, description, stack, detail }) {
           ))}
         </div>
 
-        <hr className="mb-4 border-slate-100" />
+        <hr className="mb-3 border-slate-100" />
 
-        <div className="flex items-center justify-between">
-          <button
-            onClick={() => setOpen(true)}
-            className="text-sm font-medium text-primary-600 hover:underline flex items-center gap-1"
-          >
-            자세히 보기 →
-          </button>
-        </div>
+        <button
+          onClick={() => setOpen(true)}
+          className="text-sm font-medium text-primary-600 hover:underline"
+        >
+          자세히 보기 →
+        </button>
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
