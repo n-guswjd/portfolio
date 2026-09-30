@@ -9,6 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "./components/ui/dialog";
+import ContactView from "./components/ContactView";
 
 import Proflie from "./assets/profile.png";
 
@@ -33,7 +34,7 @@ function App() {
           if (!open) setTab("projects");
         }}
       >
-        <DialogContent>
+        <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <div className="flex items-center gap-3">
               <img
@@ -43,10 +44,11 @@ function App() {
               />
               <div className="flex flex-col">
                 <DialogTitle>남현정</DialogTitle>
-                <p className="text-sm text-subtext">Frontend Engineer</p>
+                <p className="text-sm text-subtext mt-1">Frontend Engineer</p>
               </div>
             </div>
           </DialogHeader>
+          <ContactView />
         </DialogContent>
       </Dialog>
     </div>
