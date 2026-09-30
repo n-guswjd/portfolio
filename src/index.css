@@ -155,4 +155,11 @@
   html {
     @apply font-sans;
   }
+
+  button,
+  a,
+  [role="button"],
+  [data-slot="tabs-trigger"] {
+    cursor: pointer;
+  }
 }
