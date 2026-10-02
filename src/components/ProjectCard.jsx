@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
+import ProjectDetail from "./ProjectDetail";
 
 function ProjectCard({
   index,
@@ -32,7 +34,7 @@ function ProjectCard({
         <p className="text-sm text-subtext mb-3">{description}</p>
 
         <div className="flex flex-wrap gap-1.5 mb-3">
-          {stack.map((s) => (
+          {stack.slice(0, 4).map((s) => (
             <span
               key={s}
               className="rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-600"
@@ -53,12 +55,18 @@ function ProjectCard({
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>{title}</DialogTitle>
-          </DialogHeader>
-          <p className="text-sm text-subtext">{detail}</p>
-        </DialogContent>
+        {typeof detail === "string" ? (
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>{title}</DialogTitle>
+            </DialogHeader>
+            <p className="text-sm text-subtext">{detail}</p>
+          </DialogContent>
+        ) : (
+          <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-6xl">
+            <ProjectDetail title={title} stack={stack} detail={detail} />
+          </DialogContent>
+        )}
       </Dialog>
     </>
   );

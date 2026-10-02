@@ -32,6 +32,20 @@
   --font-sans: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
+  /* pet-care 컬러토큰 */
+  --color-pet-care-main-1: #203f63;
+  --color-pet-care-main-2: #a0b0c0;
+  --color-pet-care-gray-1: #f3f3f3;
+  --color-pet-care-gray-2: #eaeaea;
+  --color-pet-care-gray-3: #e0e0e0;
+  --color-pet-care-gray-4: #dadada;
+  --color-pet-care-gray-5: #b4b4b4;
+  --color-pet-care-gray-6: #828282;
+  --color-pet-care-gray-7: #3c3c3c;
+  --color-pet-care-blue-1: #35a6ca;
+  --color-pet-care-blue-2: #615ef0;
+  --color-pet-care-red: #ff4747;
+
   @keyframes float-slow {
     0%,
     100% {

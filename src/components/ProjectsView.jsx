@@ -1,17 +1,178 @@
 import Tree from "../assets/tree.png";
+import designSystemScreen from "../assets/PetCare/mainpage.png";
+
 import ProjectCard from "./ProjectCard";
+
+const showcasePreview = (
+  <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 rounded-2xl border border-primary-100 bg-white p-4 shadow-sm">
+      <div className="flex items-center justify-between">
+        <h5 className="text-sm font-bold text-ink">
+          🔘 버튼 시스템 (Button Variants)
+        </h5>
+        <a
+          href="https://www.figma.com/design/HVjfwS2b8Rlacxdy3u53jo/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 rounded-full border border-primary-100 bg-primary-50 px-2.5 py-1 font-mono text-[11px] font-semibold text-primary-700 transition-colors hover:bg-primary-100"
+        >
+          피그마 바로가기 ↗
+        </a>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          className="rounded-md border border-pet-care-main-1 bg-pet-care-main-1 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-pet-care-main-1/90"
+        >
+          Primary
+        </button>
+
+        <button
+          type="button"
+          className="rounded-md border border-pet-care-main-1 bg-pet-care-main-1 px-4 py-2 text-sm font-semibold text-white transition-colors"
+        >
+          Secondary
+        </button>
+
+        <button
+          type="button"
+          className="rounded-md border border-pet-care-main-1 bg-white px-4 py-2 text-sm font-semibold text-pet-care-main-1 transition-colors hover:bg-slate-100"
+        >
+          Outline
+        </button>
+
+        <button
+          type="button"
+          className="border-b-2 border-b-pet-care-main-1 bg-white px-4 py-2 text-sm font-semibold text-pet-care-main-1"
+        >
+          User Tab
+        </button>
+
+        <button
+          type="button"
+          disabled
+          className="cursor-not-allowed rounded-md border border-pet-care-gray-3 bg-pet-care-main-2 px-4 py-2 text-sm font-semibold text-pet-care-gray-3"
+        >
+          Disabled
+        </button>
+      </div>
+    </div>
+
+    <div className="flex flex-col gap-3 rounded-2xl border border-primary-100 bg-white p-4 shadow-sm">
+      <div className="flex items-center justify-between">
+        <h5 className="text-sm font-bold text-ink">
+          🌈 토큰 컬러 팔레트 (Design Tokens)
+        </h5>
+        <span className="font-mono text-xs text-subtext">All 12 Tokens</span>
+      </div>
+
+      <div className="max-h-40 overflow-y-auto pr-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+        <div className="grid grid-cols-4 gap-2.5">
+          <div className="flex h-16 items-end rounded-lg bg-pet-care-main-1 p-2 font-mono text-[11px] font-semibold text-white">
+            main-1
+          </div>
+          <div className="flex h-16 items-end rounded-lg bg-pet-care-main-2 p-2 font-mono text-[11px] font-semibold text-pet-care-gray-7">
+            main-2
+          </div>
+          <div className="flex h-16 items-end rounded-lg border border-gray-200 bg-pet-care-gray-1 p-2 font-mono text-[11px] font-semibold text-pet-care-gray-7">
+            gray-1
+          </div>
+          <div className="flex h-16 items-end rounded-lg border border-gray-200 bg-pet-care-gray-2 p-2 font-mono text-[11px] font-semibold text-pet-care-gray-7">
+            gray-2
+          </div>
+          <div className="flex h-16 items-end rounded-lg bg-pet-care-gray-3 p-2 font-mono text-[11px] font-semibold text-pet-care-gray-7">
+            gray-3
+          </div>
+          <div className="flex h-16 items-end rounded-lg bg-pet-care-gray-4 p-2 font-mono text-[11px] font-semibold text-pet-care-gray-7">
+            gray-4
+          </div>
+          <div className="flex h-16 items-end rounded-lg bg-pet-care-gray-5 p-2 font-mono text-[11px] font-semibold text-white">
+            gray-5
+          </div>
+          <div className="flex h-16 items-end rounded-lg bg-pet-care-gray-6 p-2 font-mono text-[11px] font-semibold text-white">
+            gray-6
+          </div>
+          <div className="flex h-16 items-end rounded-lg bg-pet-care-gray-7 p-2 font-mono text-[11px] font-semibold text-white">
+            gray-7
+          </div>
+          <div className="flex h-16 items-end rounded-lg bg-pet-care-blue-1 p-2 font-mono text-[11px] font-semibold text-white">
+            blue-1
+          </div>
+          <div className="flex h-16 items-end rounded-lg bg-pet-care-blue-2 p-2 font-mono text-[11px] font-semibold text-white">
+            blue-2
+          </div>
+          <div className="flex h-16 items-end rounded-lg bg-pet-care-red p-2 font-mono text-[11px] font-semibold text-white">
+            red
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const designSystemDetail = {
+  status: "배포 완료",
+  demoUrl: "https://pet-care-2025.vercel.app",
+  githubUrl: "https://github.com/n-guswjd/PetCare_client",
+  categories: ["개인 프로젝트"],
+  period: "2025.09 — 2025.10",
+  tabs: [
+    {
+      value: "screen",
+      label: "🖥\u00A0화면 미리보기",
+      content: (
+        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <div className="flex items-center gap-1.5 border-b border-slate-100 bg-slate-50 px-3 py-2.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
+            <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+            <span className="h-2.5 w-2.5 rounded-full bg-primary-300" />
+            <span className="ml-1.5 rounded-md border border-slate-200 bg-white px-2.5 py-0.5 font-mono text-[11px] text-subtext">
+              pet-care-2025.vercel.app
+            </span>
+          </div>
+
+          <img
+            src={designSystemScreen}
+            alt="디자인 시스템 화면 미리보기"
+            className="block w-full"
+          />
+        </div>
+      ),
+    },
+    {
+      value: "showcase",
+      label: "🎨\u00A0디자인 시스템 & 토큰",
+      content: showcasePreview,
+    },
+  ],
+  snippet: [
+    { tone: "comment", text: "# 1. 저장소 복제 및 패키지 설치" },
+    {
+      tone: "command",
+      text: "git clone https://github.com/n-guswjd/PetCare_client.git",
+    },
+    { tone: "command", text: "npm install" },
+    { tone: "comment", text: "# 2. 스토리북 컴포넌트 구동" },
+    { tone: "run", text: "npm run storybook" },
+  ],
+  highlights: [
+    "기획,디자인 개발까지 혼자 진행한 개인 프로젝트",
+    "반응형 토큰 기반의 재사용 가능한 UI 컴포넌트 라이브러리",
+  ],
+};
 
 function ProjectsView() {
   return (
-    <main className="relative flex items-center justify-center min-h-[70vh]">
+    <main className="relative flex min-h-[70vh] items-center justify-center">
       <div className="relative">
         <svg
-          className="absolute top-[38%] right-[calc(100%-3vw)] -translate-y-1/2 w-[8vw] h-8 overflow-visible pointer-events-none z-20 animate-float-slow"
+          className="pointer-events-none absolute top-[38%] right-[calc(100%-3vw)] z-20 h-8 w-[8vw] -translate-y-1/2 animate-float-slow overflow-visible"
           viewBox="0 0 160 40"
           preserveAspectRatio="none"
         >
           <defs>
-            <radialGradient id="glow-right" cx="50%" cy="50%" r="50%">
+            <radialGradient id="glow-left" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="#34d399" stopOpacity="0.8" />
               <stop offset="50%" stopColor="#34d399" stopOpacity="0.4" />
               <stop offset="100%" stopColor="#34d399" stopOpacity="0" />
@@ -26,17 +187,17 @@ function ProjectsView() {
             strokeDasharray="6 6"
             vectorEffect="non-scaling-stroke"
           />
-          <circle cx="155" cy="20" r="10" fill="url(#glow-right)" />
+          <circle cx="155" cy="20" r="10" fill="url(#glow-left)" />
           <circle cx="155" cy="20" r="4" className="fill-primary-600" />
         </svg>
 
         <svg
-          className="absolute top-[28%] left-[calc(100%-3vw)] -translate-y-1/2 w-[8vw] h-8 overflow-visible pointer-events-none z-20 animate-float-reverse"
+          className="pointer-events-none absolute top-[28%] left-[calc(100%-3vw)] z-20 h-8 w-[8vw] -translate-y-1/2 animate-float-reverse overflow-visible"
           viewBox="0 0 160 40"
           preserveAspectRatio="none"
         >
           <defs>
-            <radialGradient id="glow-left" cx="50%" cy="50%" r="50%">
+            <radialGradient id="glow-right" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="#34d399" stopOpacity="0.8" />
               <stop offset="50%" stopColor="#34d399" stopOpacity="0.4" />
               <stop offset="100%" stopColor="#34d399" stopOpacity="0" />
@@ -51,24 +212,37 @@ function ProjectsView() {
             strokeDasharray="6 6"
             vectorEffect="non-scaling-stroke"
           />
-          <circle cx="5" cy="20" r="10" fill="url(#glow-left)" />
+          <circle cx="5" cy="20" r="10" fill="url(#glow-right)" />
           <circle cx="5" cy="20" r="4" className="fill-primary-600" />
         </svg>
 
         <img
           src={Tree}
           alt="작업 정원"
-          className="w-[24vw] max-w-[300px] h-auto object-contain relative z-10"
+          className="relative z-10 h-auto w-[24vw] max-w-[300px] object-contain"
         />
 
         <ProjectCard
           index="첫"
           type="frontend"
-          title="첫번째 프로젝트"
-          description="프로젝트 내용"
-          stack={["React", "TypeScript", "Tailwind CSS", "Storybook"]}
-          detail="프로젝트 내용"
-          className="absolute top-[60%] right-full -translate-y-1/2 mr-[5vw] z-10 animate-float-slow"
+          title="동물병원 웹 플랫폼"
+          description="기획, 디자인, 개발까지 혼자 진행한 개인 프로젝트"
+          stack={[
+            "React19",
+            "TypeScript",
+            "Tailwind CSS v4",
+            "Storybook v10",
+            "Vite",
+            "React Router v7",
+            "Radix UI",
+            "CVA",
+            "Lucide Icons",
+            "Vitest",
+            "Playwright",
+            "ESLint v9",
+          ]}
+          detail={designSystemDetail}
+          className="absolute right-full top-[60%] z-10 mr-[5vw] -translate-y-1/2 animate-float-slow"
         />
 
         <ProjectCard
@@ -78,7 +252,7 @@ function ProjectsView() {
           description="프로젝트 내용"
           stack={["React", "TypeScript", "Tailwind CSS", "Storybook"]}
           detail="프로젝트 내용"
-          className="absolute top-1/2 left-full -translate-y-1/2 ml-[5vw] z-10 animate-float-reverse"
+          className="absolute left-full top-1/2 z-10 ml-[5vw] -translate-y-1/2 animate-float-reverse"
         />
       </div>
     </main>
