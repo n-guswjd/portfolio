@@ -157,7 +157,7 @@ function ProjectDetail({ title, stack, detail }) {
           <section className="flex flex-col gap-3">
             <h4 className="flex items-center gap-2 text-sm font-bold text-ink">
               <Sparkles size={16} className="text-primary-600" />
-              주요 구현 및 성과 (Key Highlights)
+              주요 구현 (Highlights)
             </h4>
             <ul className="flex flex-col gap-3">
               {highlights.map((highlight) => (
