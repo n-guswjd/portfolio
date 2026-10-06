@@ -9,7 +9,7 @@ import {
   Terminal,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { DialogTitle } from "./ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 
 function ProjectDetail({ title, stack, detail }) {
@@ -26,6 +26,7 @@ function ProjectDetail({ title, stack, detail }) {
 
   const [tab, setTab] = useState(tabs[0].value);
   const [copied, setCopied] = useState(false);
+  const [comingSoonOpen, setComingSoonOpen] = useState(false);
 
   const handleCopy = async () => {
     try {
@@ -49,15 +50,26 @@ function ProjectDetail({ title, stack, detail }) {
           </span>
         </div>
 
-        <a
-          href={demoUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-primary-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-800"
-        >
-          <Globe size={16} />
-          라이브 데모 바로가기
-        </a>
+        {demoUrl ? (
+          <a
+            href={demoUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-primary-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-800"
+          >
+            <Globe size={16} />
+            라이브 데모 바로가기
+          </a>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setComingSoonOpen(true)}
+            className="inline-flex items-center gap-2 rounded-full bg-primary-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-800"
+          >
+            <Globe size={16} />
+            라이브 데모 바로가기
+          </button>
+        )}
       </div>
 
       <hr className="border-slate-100" />
@@ -189,6 +201,21 @@ function ProjectDetail({ title, stack, detail }) {
           <ArrowUpRight size={16} />
         </a>
       </div>
+
+      <Dialog open={comingSoonOpen} onOpenChange={setComingSoonOpen}>
+        <DialogContent className="sm:max-w-sm">
+          <DialogHeader>
+            <DialogTitle>배포 준비 중이에요</DialogTitle>
+          </DialogHeader>
+          <p className="text-sm text-subtext">
+            아직 배포 전인 프로젝트예요.
+            <br />
+            빠른 시일 내에 라이브 데모를 준비하겠습니다 !
+            <br />
+            로컬에서 실행해주세요 :)
+          </p>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
