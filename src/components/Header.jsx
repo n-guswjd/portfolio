@@ -38,6 +38,8 @@ function Header({ tab, onTabChange }) {
       <section className="flex items-center gap-4 ml-auto">
         <a
           href="https://github.com/n-guswjd"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 border rounded-full p-3 border-primary-100"
         >
           <img src={githubLogo} alt="GitHub icon" className="w-6 h-6" />
