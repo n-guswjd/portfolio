@@ -298,15 +298,19 @@ const secondProjectDetail = {
     },
   ],
   snippet: [
-    // 추후 업데이트 예정
-    // { tone: "comment", text: "# 1. 저장소 복제 및 패키지 설치" },
-    // {
-    //   tone: "command",
-    //   text: "git clone ",
-    // },
-    // { tone: "command", text: "npm install" },
-    // { tone: "comment", text: "# 2. 개발 서버 실행" },
-    // { tone: "run", text: "npm run dev" },
+    { tone: "comment", text: "# 1. 저장소 복제 및 패키지 설치 (server)" },
+    {
+      tone: "command",
+      text: "git clone https://github.com/DearObjet/DearObjet-backend.git",
+    },
+    { tone: "comment", text: "# 2. 저장소 복제 및 패키지 설치 (client)" },
+    {
+      tone: "command",
+      text: "git clone https://github.com/DearObjet/DearObjet-frontend.git",
+    },
+    { tone: "command", text: "npm install" },
+    { tone: "comment", text: "# 2. 개발 서버 실행" },
+    { tone: "run", text: "npm run dev" },
   ],
   highlights: [
     // "소품샵 관리를 위한 실시간 알림 및 통계 웹 플랫폼",
