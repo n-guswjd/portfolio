@@ -116,7 +116,7 @@ const firstProjectShowcase = (
 
 const firstProjectDetail = {
   status: "배포 완료",
-  demoUrl: "https://pet-care-2025.vercel.app",
+  demoUrl: "https://n-guswjd.github.io/PetCare_client/",
   githubUrl: "https://github.com/n-guswjd/PetCare_client",
   categories: ["개인 프로젝트"],
   period: "2025.09 — 2025.10",
