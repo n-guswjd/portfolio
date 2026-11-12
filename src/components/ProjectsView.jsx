@@ -262,7 +262,7 @@ const secondProjectShowcase = (
 const secondProjectDetail = {
   status: "배포 전",
   // demoUrl: "",
-  // githubUrl: "",
+  githubUrl: "https://github.com/n-guswjd/DearObjet",
   categories: ["팀 프로젝트", "프론트엔드"],
   period: "2025.9 — 2026.05",
   tabs: [
@@ -301,12 +301,12 @@ const secondProjectDetail = {
     { tone: "comment", text: "# 1. 저장소 복제 및 패키지 설치 (server)" },
     {
       tone: "command",
-      text: "git clone https://github.com/DearObjet/DearObjet-backend.git",
+      text: "git clone https://github.com/n-guswjd/DearObjet.git",
     },
     { tone: "comment", text: "# 2. 저장소 복제 및 패키지 설치 (client)" },
     {
       tone: "command",
-      text: "git clone https://github.com/DearObjet/DearObjet-frontend.git",
+      text: "git clone https://github.com/n-guswjd/DearObjet.git",
     },
     { tone: "command", text: "npm install" },
     { tone: "comment", text: "# 2. 개발 서버 실행" },
